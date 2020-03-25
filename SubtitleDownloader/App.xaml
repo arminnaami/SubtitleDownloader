@@ -25,7 +25,6 @@
                     </DrawingGroup>
                 </DrawingBrush.Drawing>
             </DrawingBrush>
-            <SolidColorBrush x:Key="ForthlyRegionBrush" Color="{DynamicResource ForthlyRegionColor}"/>
             <ItemsPanelTemplate x:Key="FluidMoveBehaviorWrapPanelItemsPanelTemplate">
                 <WrapPanel HorizontalAlignment="Center" hc:PanelElement.FluidMoveBehavior="{StaticResource BehaviorXY200}"/>
             </ItemsPanelTemplate>

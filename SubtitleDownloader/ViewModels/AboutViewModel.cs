@@ -1,4 +1,5 @@
 ﻿using Prism.Mvvm;
+using Rasyidf.Localization;
 using System.Reflection;
 
 namespace SubtitleDownloader.ViewModels
@@ -13,7 +14,7 @@ namespace SubtitleDownloader.ViewModels
         }
         public AboutViewModel()
         {
-            Version = "نسخه " + Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            Version = string.Format(LocalizationService.GetString("1039", "Text", "نسخه {0}"), Assembly.GetExecutingAssembly().GetName().Version.ToString());
         }
     }
 }

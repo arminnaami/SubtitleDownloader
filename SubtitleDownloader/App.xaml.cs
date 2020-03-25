@@ -5,9 +5,11 @@ using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 using Prism.Ioc;
 using Prism.Regions;
+using Rasyidf.Localization;
 using SubtitleDownloader.Views;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -51,6 +53,12 @@ namespace SubtitleDownloader
 
         protected override Window CreateShell()
         {
+            GlobalData.Init();
+            if (GlobalData.Config.Skin != SkinType.Default)
+            {
+                UpdateSkin(GlobalData.Config.Skin);
+            }
+            UpdateLanguage(GlobalData.Config.UILang, true);
             return Container.Resolve<MainWindow>();
         }
 
@@ -79,19 +87,32 @@ namespace SubtitleDownloader
         public override void Initialize()
         {
             base.Initialize();
-            GlobalData.Init();
-
-            if (GlobalData.Config.Skin != SkinType.Default)
-            {
-                UpdateSkin(GlobalData.Config.Skin);
-            }
 
             //init Appcenter Crash Reporter
             AppCenter.Start("3770b372-60d5-49a1-8340-36a13ae5fb71",
                    typeof(Analytics), typeof(Crashes));
             AppCenter.Start("3770b372-60d5-49a1-8340-36a13ae5fb71",
                                typeof(Analytics), typeof(Crashes));
+        }
 
+        internal void UpdateLanguage(string cultureName, bool isInit)
+        {
+            if (isInit)
+            {
+                LocalizationService.Current.Initialize("Assets", cultureName);
+            }
+            else
+            {
+                CultureInfo culture = new CultureInfo(cultureName);
+                LocalizationService.Current.ChangeLanguage(LocalizationDictionary.GetResources(culture));
+            }
+            ConfigHelper.Instance.SetLang(cultureName);
+        }
+
+        internal bool IsLanguageRTL()
+        {
+            string culture = LocalizationService.Current.LanguagePack.Culture.Name;
+            return culture.Equals("fa-IR");
         }
     }
 }

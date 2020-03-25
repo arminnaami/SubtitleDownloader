@@ -3,26 +3,27 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"     
              xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:ul="http://rasyidf.github.io/Localisation"
              prism:ViewModelLocator.AutoWireViewModel="True">
     <hc:TransitioningContentControl>
       <hc:ScrollViewer>
         <Border hc:ScrollViewer.IsInertiaEnabled="True" Background="{DynamicResource RegionBrush}" Margin="16" CornerRadius="10" Effect="{StaticResource EffectShadow4}">
             <StackPanel Margin="20,10,20,20">
-                <hc:Divider LineStrokeThickness="2" Content="دانلود"/>
+                    <hc:Divider LineStrokeThickness="2" Content="{ul:Tr دانلود, Uid=1020}"/>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="150"/>
                         <ColumnDefinition Width="40"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Foreground="{DynamicResource PrimaryTextBrush}" Margin="0,10" Text="مسیر ذخیره"/>
+                        <TextBlock Foreground="{DynamicResource PrimaryTextBrush}" Margin="0,10" Text="{ul:Tr مسیر ذخیره, Uid=1021}"/>
                     <Button Command="{Binding SelectFolderCommand}" Foreground="{DynamicResource PrimaryBrush}" Grid.Column="1" Style="{StaticResource ButtonIconCircular}" hc:IconElement.Geometry="{DynamicResource SaveGeometry}"/>
-                    <hc:TextBox Text="{Binding CurrentStoreLocation}" FlowDirection="LeftToRight" Grid.Column="2" hc:InfoElement.Placeholder="انتخاب پوشه برای ذخیره..." IsReadOnly="True" />
+                        <hc:TextBox Text="{Binding CurrentStoreLocation}" FlowDirection="LeftToRight" Grid.Column="2" hc:InfoElement.Placeholder="{ul:Tr انتخاب پوشه برای ذخیره..., Uid=1022}" IsReadOnly="True" />
                 </Grid>
-                <ToggleButton IsChecked="{Binding GetIsCheckedAutoDownload}" HorizontalAlignment="Left" Command="{Binding AutoDownloadCommand}" CommandParameter="{Binding IsChecked, RelativeSource={RelativeSource Self}}" Margin="0,10,0,0" Content="دانلود خودکار زیرنویس بعد از انتخاب زیرنویس  " Style="{StaticResource ToggleButtonSwitch}"/>
-                <ToggleButton IsChecked="{Binding GetIsCheckedShowNotification}" HorizontalAlignment="Left" Command="{Binding ShowNotificationCommand}" CommandParameter="{Binding IsChecked, RelativeSource={RelativeSource Self}}" Margin="0,10,0,0" Content="نمایش اطلاعیه هنگام اتمام دانلود" Style="{StaticResource ToggleButtonSwitch}"/>
-                <hc:Divider LineStrokeThickness="2" Content="زیرنویس"/>
-                <hc:ComboBox IsEditable="False" hc:TitleElement.Title="{Binding CurrentLanguage}" hc:InfoElement.Placeholder="انتخاب زبان زیرنویس...">
+                    <ToggleButton IsChecked="{Binding GetIsCheckedAutoDownload}" HorizontalAlignment="Left" Command="{Binding AutoDownloadCommand}" CommandParameter="{Binding IsChecked, RelativeSource={RelativeSource Self}}" Margin="0,10,0,0" Content="{ul:Tr دانلود خودکار زیرنویس بعد از انتخاب زیرنویس  , Uid=1025}" Style="{StaticResource ToggleButtonSwitch}"/>
+                    <ToggleButton IsChecked="{Binding GetIsCheckedShowNotification}" HorizontalAlignment="Left" Command="{Binding ShowNotificationCommand}" CommandParameter="{Binding IsChecked, RelativeSource={RelativeSource Self}}" Margin="0,10,0,0" Content="{ul:Tr نمایش اطلاعیه هنگام اتمام دانلود, Uid=1026}" Style="{StaticResource ToggleButtonSwitch}"/>
+                    <hc:Divider LineStrokeThickness="2" Content="{ul:Tr زیرنویس, Uid=1023}"/>
+                    <hc:ComboBox IsEditable="False" hc:TitleElement.Title="{Binding CurrentLanguage}" hc:InfoElement.Placeholder="{ul:Tr انتخاب زبان زیرنویس..., Uid=1024}">
                     <ComboBoxItem Content="farsi_persian"/>
                     <ComboBoxItem Content="english"/>
                     <hc:Interaction.Triggers>
@@ -31,7 +32,7 @@
                         </hc:EventTrigger>
                     </hc:Interaction.Triggers>
                 </hc:ComboBox>
-                    <hc:ComboBox IsEditable="False" hc:TitleElement.Title="{Binding CurrentServer}" Margin="0,10" hc:InfoElement.Placeholder="انتخاب سرور زیرنویس...">
+                    <hc:ComboBox IsEditable="False" hc:TitleElement.Title="{Binding CurrentServer}" Margin="0,10" hc:InfoElement.Placeholder="{ul:Tr انتخاب سرور زیرنویس..., Uid=1027}">
                     <ComboBoxItem Content="https://subf2m.co"/>
                     <ComboBoxItem Content="https://subf2m.ir"/>
                     <ComboBoxItem Content="https://sub.deltaleech.com"/>
@@ -43,10 +44,10 @@
                         </hc:EventTrigger>
                     </hc:Interaction.Triggers>
                 </hc:ComboBox>
-                <hc:Divider LineStrokeThickness="2" Content="عمومی"/>
-                <ToggleButton IsChecked="{Binding GetIsCheckedFileContextMenu}" HorizontalAlignment="Left" Command="{Binding AddToFileContextMenuCommand}" CommandParameter="{Binding IsChecked, RelativeSource={RelativeSource Self}}" Margin="0,10,0,0" Content="افزودن برنامه به منوی کلیک راست فایل ها" Style="{StaticResource ToggleButtonSwitch}"/>
-                <ToggleButton IsChecked="{Binding GetIsCheckedFolderContextMenu}" HorizontalAlignment="Left" Command="{Binding AddToFolderContextMenuCommand}" CommandParameter="{Binding IsChecked, RelativeSource={RelativeSource Self}}" Margin="0,10,0,0" Content="افزودن برنامه به منوی کلیک راست پوشه ها" Style="{StaticResource ToggleButtonSwitch}"/>
-                <ToggleButton IsChecked="{Binding GetIsCheckedShowNotifyIcon}" HorizontalAlignment="Left" Command="{Binding IsShowNotifyIconCommand}" CommandParameter="{Binding IsChecked, RelativeSource={RelativeSource Self}}" Margin="0,10,0,0" Content="اجرای برنامه در پس زمینه (برنامه به جای بستن مخفی خواهد شد و از سیستم ترای قابل دسترس خواهد بود)" Style="{StaticResource ToggleButtonSwitch}"/>
+                    <hc:Divider LineStrokeThickness="2" Content="{ul:Tr عمومی, Uid=1028}"/>
+                    <ToggleButton IsChecked="{Binding GetIsCheckedFileContextMenu}" HorizontalAlignment="Left" Command="{Binding AddToFileContextMenuCommand}" CommandParameter="{Binding IsChecked, RelativeSource={RelativeSource Self}}" Margin="0,10,0,0" Content="{ul:Tr افزودن برنامه به منوی کلیک راست فایل ها, Uid=1029}" Style="{StaticResource ToggleButtonSwitch}"/>
+                    <ToggleButton IsChecked="{Binding GetIsCheckedFolderContextMenu}" HorizontalAlignment="Left" Command="{Binding AddToFolderContextMenuCommand}" CommandParameter="{Binding IsChecked, RelativeSource={RelativeSource Self}}" Margin="0,10,0,0" Content="{ul:Tr افزودن برنامه به منوی کلیک راست پوشه ها, Uid=1030}" Style="{StaticResource ToggleButtonSwitch}"/>
+                    <ToggleButton IsChecked="{Binding GetIsCheckedShowNotifyIcon}" HorizontalAlignment="Left" Command="{Binding IsShowNotifyIconCommand}" CommandParameter="{Binding IsChecked, RelativeSource={RelativeSource Self}}" Margin="0,10,0,0" Content="{ul:Tr اجرای برنامه در پس زمینه (برنامه به جای بستن مخفی خواهد شد و از سیستم ترای قابل دسترس خواهد بود), Uid=1031}" Style="{StaticResource ToggleButtonSwitch}"/>
             </StackPanel>
         </Border>
         </hc:ScrollViewer>

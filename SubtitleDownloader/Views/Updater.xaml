@@ -3,31 +3,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"
              xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:ul="http://rasyidf.github.io/Localisation"
              prism:ViewModelLocator.AutoWireViewModel="True">
     <hc:TransitioningContentControl>
         <hc:ScrollViewer>
           <Border hc:ScrollViewer.IsInertiaEnabled="True" Background="{DynamicResource RegionBrush}" Margin="16" CornerRadius="10" Effect="{StaticResource EffectShadow4}">
             <StackPanel Margin="10">
-                <Button Margin="10" Content="بررسی بروزرسانی" Height="35" Width="300" Command="{Binding CheckUpdateCommand}"/>
+                    <Button Margin="10" Content="{ul:Tr بررسی بروزرسانی, Uid=1013}" Height="35" Width="300" Command="{Binding CheckUpdateCommand}"/>
                 <StackPanel Orientation="Horizontal">
-                    <Label Style="{DynamicResource LabelInfo}" Content="ایجاد در " Margin="5"/>
+                        <Label Style="{DynamicResource LabelInfo}" Content="{ul:Tr ایجاد در , Uid=1014}" Margin="5"/>
                     <hc:TextBox FlowDirection="LeftToRight" Text="{Binding CreatedAt}" IsReadOnly="True" Margin="5"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Label Style="{DynamicResource LabelInfo}" Content="انتشار در " Margin="5"/>
+                        <Label Style="{DynamicResource LabelInfo}" Content="{ul:Tr انتشار در , Uid=1015}" Margin="5"/>
                     <hc:TextBox FlowDirection="LeftToRight" Text="{Binding PublishedAt}" IsReadOnly="True" Margin="5"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Label Style="{DynamicResource LabelInfo}" Content="نسخه فعلی " Margin="5"/>
+                        <Label Style="{DynamicResource LabelInfo}" Content="{ul:Tr نسخه فعلی , Uid=1016}" Margin="5"/>
                     <hc:TextBox Text="{Binding CurrentVersion}" IsReadOnly="True" Margin="5"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Label Style="{DynamicResource LabelInfo}" Content="نسخه جدید " Margin="5"/>
+                        <Label Style="{DynamicResource LabelInfo}" Content="{ul:Tr نسخه جدید , Uid=1017}" Margin="5"/>
                     <hc:TextBox Text="{Binding Version}" IsReadOnly="True" Margin="5"/>
                 </StackPanel>
                     <StackPanel Orientation="Horizontal" Visibility="{Binding IsUpdateExist}">
-                    <Label Style="{DynamicResource LabelInfo}" Content="لینک دانلود " Margin="5"/>
-                        <Button Margin="5" Content="دانلود بروزرسانی جدید" Command="hc:ControlCommands.OpenLink" CommandParameter="{Binding DownloadUrl}"/>
+                        <Label Style="{DynamicResource LabelInfo}" Content="{ul:Tr لینک دانلود , Uid=1018}" Margin="5"/>
+                        <Button Margin="5" Content="{ul:Tr دانلود بروزرسانی جدید, Uid=1019}" Command="hc:ControlCommands.OpenLink" CommandParameter="{Binding DownloadUrl}"/>
                     </StackPanel>
                 <TextBox Text="{Binding ChangeLog}" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" TextWrapping="Wrap" Margin="10" Height="200" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
             </StackPanel>

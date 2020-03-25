@@ -6,17 +6,18 @@
         prism:ViewModelLocator.AutoWireViewModel="True"
         Background="{DynamicResource RegionBrush}"
         xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:ul="http://rasyidf.github.io/Localisation"
         Margin="16"
         CornerRadius="10"
         Effect="{StaticResource EffectShadow4}">
     <DockPanel>
-        <Button Command="{Binding EmptyContentCommand}" DockPanel.Dock="Top" HorizontalAlignment="Stretch" Margin="10,10,10,4" Content="زیرنویس" BorderThickness="0" Background="{DynamicResource SecondaryRegionBrush}"/>
+        <Button Command="{Binding EmptyContentCommand}" DockPanel.Dock="Top" HorizontalAlignment="Stretch" Margin="10,10,10,4" Content="{ul:Tr زیرنویس, Uid=1010}" BorderThickness="0" Background="{DynamicResource SecondaryRegionBrush}"/>
         <ListBox VirtualizingStackPanel.IsVirtualizing="True" BorderThickness="0" SelectionMode="Single" Style="{StaticResource ListBoxTransparent}">
-            <ListBoxItem Tag="Subscene" Margin="10,5,10,0" Content="سابسین"/>
-            <ListBoxItem Tag="PopularSeries" Margin="10,5,10,0" Content="زیرنویس های محبوب"/>
-            <ListBoxItem Tag="Settings" Margin="10,5,10,0" Content="تنظیمات"/>
-            <ListBoxItem Tag="Updater" Margin="10,5,10,0" Content="بروزرسانی"/>
-            <ListBoxItem Tag="About" Margin="10,5,10,0" Content="درباره ما"/>
+            <ListBoxItem Tag="Subscene" Margin="10,5,10,0" Content="{ul:Tr سابسین, Uid=1005}"/>
+            <ListBoxItem Tag="PopularSeries" Margin="10,5,10,0" Content="{ul:Tr زیرنویس های محبوب, Uid=1006}"/>
+            <ListBoxItem Tag="Settings" Margin="10,5,10,0" Content="{ul:Tr تنظیمات, Uid=1007}"/>
+            <ListBoxItem Tag="Updater" Margin="10,5,10,0" Content="{ul:Tr بروزرسانی, Uid=1008}"/>
+            <ListBoxItem Tag="About" Margin="10,5,10,0" Content="{ul:Tr درباره ما, Uid=1009}"/>
             <hc:Interaction.Triggers>
                 <hc:EventTrigger EventName="SelectionChanged">
                     <hc:EventToCommand Command="{Binding SwitchItemCmd}" PassEventArgsToCommand="True"/>

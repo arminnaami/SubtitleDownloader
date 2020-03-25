@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using Prism.Commands;
 using Prism.Mvvm;
+using Rasyidf.Localization;
 using System;
 using System.Windows.Controls;
 using System.Windows.Forms;
@@ -85,8 +86,8 @@ namespace SubtitleDownloader.ViewModels
             GetIsCheckedShowNotification = GlobalData.Config.IsShowNotification;
             GetIsCheckedShowNotifyIcon = GlobalData.Config.IsShowNotifyIcon;
 
-            CurrentLanguage = string.Format("زبان زیرنویس ({0})", GlobalData.Config.SubtitleLang);
-            CurrentServer = string.Format("سرور زیرنویس ({0})", GlobalData.Config.ServerUrl);
+            CurrentLanguage = string.Format(LocalizationService.GetString("1037", "Title", "زبان زیرنویس {0}"), GlobalData.Config.SubtitleLang);
+            CurrentServer = string.Format(LocalizationService.GetString("1038", "Title", "سرور زیرنویس {0}"), GlobalData.Config.ServerUrl);
         }
 
         private void ServerChanged(SelectionChangedEventArgs e)
@@ -101,7 +102,7 @@ namespace SubtitleDownloader.ViewModels
                 {
                     GlobalData.Config.ServerUrl = item.Content.ToString();
                     GlobalData.Save();
-                    CurrentServer = string.Format("سرور زیرنویس ({0})", GlobalData.Config.ServerUrl);
+                    CurrentServer = string.Format(LocalizationService.GetString("1038", "Title", "سرور زیرنویس {0}"), GlobalData.Config.ServerUrl);
                 }
             }
         }
@@ -118,7 +119,7 @@ namespace SubtitleDownloader.ViewModels
                 {
                     GlobalData.Config.SubtitleLang = item.Content.ToString();
                     GlobalData.Save();
-                    CurrentLanguage = string.Format("زبان زیرنویس ({0})", GlobalData.Config.SubtitleLang);
+                    CurrentLanguage = string.Format(LocalizationService.GetString("1037", "Title", "زبان زیرنویس {0}"), GlobalData.Config.SubtitleLang);
                 }
             }
         }

@@ -4,6 +4,7 @@ using HtmlAgilityPack;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
+using Rasyidf.Localization;
 using SubtitleDownloader.Data;
 using SubtitleDownloader.Model;
 using System;
@@ -39,7 +40,7 @@ namespace SubtitleDownloader.ViewModels
             set => SetProperty(ref _isEnabled, value);
         }
 
-        private string _content = "دانلود زیرنویس";
+        private string _content = LocalizationService.GetString("1042", "Content", "دانلود زیرنویس");
         public string Content
         {
             get => _content;
@@ -169,7 +170,7 @@ namespace SubtitleDownloader.ViewModels
                 }
 
                 SubtitleDownloadLink = item.Link;
-                Content = "دانلود زیرنویس";
+                Content = LocalizationService.GetString("1042", "Content", "دانلود زیرنویس");
                 IsOpen = true;
 
                 if (GlobalData.Config.IsAutoDownloadSubtitle)
@@ -231,7 +232,7 @@ namespace SubtitleDownloader.ViewModels
                 }
                 else
                 {
-                    MessageBox.Error("زیرنویس موردنظر پیدا نشد");
+                    MessageBox.Error(LocalizationService.GetString("1040", "Text", "زیرنویس موردنظر پیدا نشد"));
                 }
                 IsBusy = false;
 
@@ -240,11 +241,11 @@ namespace SubtitleDownloader.ViewModels
             catch (ArgumentOutOfRangeException) { }
             catch (System.Net.WebException ex)
             {
-                Growl.Error("سرور در دسترس نیست" + "\n" + ex.Message);
+                Growl.Error(LocalizationService.GetString("1041", "Text", "سرور در دسترس نیست") + "\n" + ex.Message);
             }
             catch (System.Net.Http.HttpRequestException hx)
             {
-                Growl.Error("سرور در دسترس نیست" + "\n" + hx.Message);
+                Growl.Error(LocalizationService.GetString("1041", "Text", "سرور در دسترس نیست") + "\n" + hx.Message);
             }
             finally
             {
@@ -264,7 +265,7 @@ namespace SubtitleDownloader.ViewModels
 
                 if (repeater == null)
                 {
-                    MessageBox.Error("زیرنویس موردنظر پیدا نشد");
+                    MessageBox.Error(LocalizationService.GetString("1040", "Text", "زیرنویس موردنظر پیدا نشد"));
                 }
                 else
                 {
@@ -291,11 +292,11 @@ namespace SubtitleDownloader.ViewModels
             catch (ArgumentOutOfRangeException) { }
             catch (System.Net.WebException ex)
             {
-                Growl.Error("سرور در دسترس نیست" + "\n" + ex.Message);
+                Growl.Error(LocalizationService.GetString("1041", "Text", "سرور در دسترس نیست") + "\n" + ex.Message);
             }
             catch (System.Net.Http.HttpRequestException hx)
             {
-                Growl.Error("سرور در دسترس نیست" + "\n" + hx.Message);
+                Growl.Error(LocalizationService.GetString("1041", "Text", "سرور در دسترس نیست") + "\n" + hx.Message);
             }
             finally
             {
@@ -339,14 +340,26 @@ namespace SubtitleDownloader.ViewModels
             IsEnabled = true;
             MaskCanClose = true;
             Progress = 0;
-            Content = "باز کردن پوشه";
+            Content = LocalizationService.GetString("1043", "Content", "باز کردن پوشه");
             if (GlobalData.Config.IsShowNotification)
             {
-                Growl.Info(new GrowlInfo
+                Growl.Clear();
+                Growl.Ask(new GrowlInfo
                 {
-                    CancelStr = "انصراف",
-                    ConfirmStr = "باز کردن پوشه",
-                    Message = $"{ Episode + subName } دانلود شد"
+                    CancelStr = LocalizationService.GetString("1045", "Text", "انصراف"),
+                    ConfirmStr = LocalizationService.GetString("1043", "Content", "باز کردن پوشه"),
+                    Message = string.Format(LocalizationService.GetString("1046", "Text", "{0} دانلود شد"), Episode + subName),
+                    ActionBeforeClose = b =>
+                    {
+
+                        if (!b)
+                        {
+                            return true;
+                        }
+                        System.Diagnostics.Process.Start("explorer.exe", "/select, \"" + location + "\"");
+                        return true;
+
+                    }
                 });
             }
         }
@@ -356,12 +369,12 @@ namespace SubtitleDownloader.ViewModels
             try
             {
 
-                if (Content != "باز کردن پوشه")
+                if (Content != LocalizationService.GetString("1043", "Content", "باز کردن پوشه"))
                 {
                     MaskCanClose = false;
                     IsChecked = true;
                     IsEnabled = false;
-                    Content = "...درحال دانلود";
+                    Content = LocalizationService.GetString("1044", "Content", "...درحال دانلود");
                     Progress = 0;
 
                     HtmlWeb web = new HtmlWeb();

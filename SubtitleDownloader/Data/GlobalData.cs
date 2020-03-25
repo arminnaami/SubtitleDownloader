@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Rasyidf.Localization;
 using System;
 using System.IO;
 
@@ -37,7 +38,7 @@ namespace SubtitleDownloader
             }
             catch (UnauthorizedAccessException)
             {
-                HandyControl.Controls.MessageBox.Error("شما دسترسی لازم را ندارید لطفا برنامه را بصورت ادمین اجرا کنید یا پوشه برنامه را به محل دیگری (خارج از پوشه های سیستمی) منتقل کنید", "خطای دسترسی");
+                HandyControl.Controls.MessageBox.Error(LocalizationService.GetString("1047", "Text", "شما دسترسی لازم را ندارید لطفا برنامه را بصورت ادمین اجرا کنید یا پوشه برنامه را به محل دیگری (خارج از پوشه های سیستمی) منتقل کنید"), LocalizationService.GetString("1048", "Text", "خطای دسترسی"));
             }
         }
 

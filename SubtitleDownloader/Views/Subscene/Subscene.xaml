@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"        
              xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:ul="http://rasyidf.github.io/Localisation"
              prism:ViewModelLocator.AutoWireViewModel="True">
     <hc:TransitioningContentControl>
         <Grid >
@@ -10,7 +11,7 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <hc:SearchBar Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" ShowClearButton="True" Style="{StaticResource SearchBarPlus}" Margin="10" hc:InfoElement.Placeholder="جستجوی زیرنویس...">
+            <hc:SearchBar Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" ShowClearButton="True" Style="{StaticResource SearchBarPlus}" Margin="10" hc:InfoElement.Placeholder="{ul:Tr جستجوی زیرنویس..., Uid=1032}">
                 <hc:Interaction.Triggers>
                     <hc:EventTrigger EventName="SearchStarted">
                         <hc:EventToCommand Command="{Binding OnSearchStartedCommand}" PassEventArgsToCommand="True"/>
@@ -19,7 +20,7 @@
             </hc:SearchBar>
 
             <Border Visibility="{Binding ContentVisibility}" Grid.Row="1" hc:ScrollViewer.IsInertiaEnabled="True" Background="{DynamicResource RegionBrush}" Margin="16" CornerRadius="10" Effect="{StaticResource EffectShadow4}">
-                <hc:BusyIndicator IsBusy="{Binding IsBusy}" Foreground="White" FlowDirection="LeftToRight" ProgressBarStyle="{StaticResource ProgressBarPrimaryStripe}" OverlayStyle="{StaticResource RectangleCircular}" BusyContent="...درحال دریافت اطلاعات">
+                <hc:BusyIndicator IsBusy="{Binding IsBusy}" Foreground="White" FlowDirection="LeftToRight" ProgressBarStyle="{StaticResource ProgressBarPrimaryStripe}" OverlayStyle="{StaticResource RectangleCircular}" BusyContent="{ul:Tr ...درحال دریافت اطلاعات, Uid=1033}">
                     <ListBox Margin="5" BorderThickness="0" FlowDirection="LeftToRight" ItemsSource="{Binding DataList}" ItemsPanel="{StaticResource FluidMoveBehaviorWrapPanelItemsPanelTemplate}">
                         <ListBox.ItemTemplate>
                             <DataTemplate>

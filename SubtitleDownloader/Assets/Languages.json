@@ -1,0 +1,370 @@
+﻿{
+  "AppId": "SubtitleDownloader",
+  "Version": "4.1.0.0",
+  "Type": "Multi",
+  "Author": "Mahdi Hosseini",
+  "Languages": [
+    {
+      "EnglishName": "English",
+      "CultureName": "United States",
+      "Culture": "en-US",
+      "RTL": false
+    },
+    {
+      "EnglishName": "Persian",
+      "CultureName": "Farsi",
+      "Culture": "fa-IR",
+      "RTL": true
+    }
+  ],
+
+  "Data": [
+    {
+      "data": [
+        {
+          "Id": 1000,
+          "Title": {
+            "en-US": "Subtitle Downloader",
+            "fa-IR": "دانلود زیرنویس"
+          }
+        },
+        {
+          "Id": 1001,
+          "Header": {
+            "en-US": "Open Panel",
+            "fa-IR": "باز کردن پنل"
+          }
+        },
+        {
+          "Id": 1002,
+          "Header": {
+            "en-US": "Exit",
+            "fa-IR": "بستن"
+          }
+        },
+        {
+          "Id": 1003,
+          "Text": {
+            "en-US": "do you want to change language?",
+            "fa-IR": "آیا مایل به تغییر زبان برنامه هستید؟"
+          }
+        },
+        {
+          "Id": 1004,
+          "Text": {
+            "en-US": "application will be running in background and this window will be hiding instead of closing, do you want?",
+            "fa-IR": "برنامه در پس زمینه در حال اجرا خواهد بود و از سیستم ترای قابل دسترس خواهد بود و این پنجره به جای بستن، مخفی خواهد شد. آیا موافقید؟"
+          }
+        },
+        {
+          "Id": 1005,
+          "Content": {
+            "en-US": "Subscene",
+            "fa-IR": "سابسین"
+          }
+        },
+        {
+          "Id": 1006,
+          "Content": {
+            "en-US": "Popular Subtitle",
+            "fa-IR": "زیرنویس های محبوب"
+          }
+        },
+        {
+          "Id": 1007,
+          "Content": {
+            "en-US": "Settings",
+            "fa-IR": "تنظیمات"
+          }
+        },
+        {
+          "Id": 1008,
+          "Content": {
+            "en-US": "Update",
+            "fa-IR": "بروزرسانی"
+          }
+        },
+        {
+          "Id": 1009,
+          "Content": {
+            "en-US": "About Us",
+            "fa-IR": "درباره ما"
+          }
+        },
+        {
+          "Id": 1010,
+          "Content": {
+            "en-US": "Subtitle",
+            "fa-IR": "زیرنویس"
+          }
+        },
+        {
+          "Id": 1011,
+          "Text": {
+            "en-US": "Programmer Mahdi Hosseini",
+            "fa-IR": "برنامه نویس مهدی حسینی"
+          }
+        },
+        {
+          "Id": 1012,
+          "Content": {
+            "en-US": "Contact Us",
+            "fa-IR": "تماس با ما"
+          }
+        },
+        {
+          "Id": 1013,
+          "Content": {
+            "en-US": "Check for Update",
+            "fa-IR": "بررسی بروزرسانی"
+          }
+        },
+        {
+          "Id": 1014,
+          "Content": {
+            "en-US": "Created at ",
+            "fa-IR": "ایجاد در "
+          }
+        },
+        {
+          "Id": 1015,
+          "Content": {
+            "en-US": "Published at ",
+            "fa-IR": "انتشار در "
+          }
+        },
+        {
+          "Id": 1016,
+          "Content": {
+            "en-US": "Current Version ",
+            "fa-IR": "نسخه فعلی "
+          }
+        },
+        {
+          "Id": 1017,
+          "Content": {
+            "en-US": "New Version ",
+            "fa-IR": "نسخه جدید "
+          }
+        },
+        {
+          "Id": 1018,
+          "Content": {
+            "en-US": "Download Link ",
+            "fa-IR": "لینک دانلود "
+          }
+        },
+        {
+          "Id": 1019,
+          "Content": {
+            "en-US": "Download New Update",
+            "fa-IR": "دانلود بروزرسانی جدید"
+          }
+        },
+        {
+          "Id": 1020,
+          "Content": {
+            "en-US": "Download",
+            "fa-IR": "دانلود"
+          }
+        },
+        {
+          "Id": 1021,
+          "Text": {
+            "en-US": "Save Path",
+            "fa-IR": "مسیر ذخیره"
+          }
+        },
+        {
+          "Id": 1022,
+          "Placeholder": {
+            "en-US": "Choose Folder for Saving Subtitles...",
+            "fa-IR": "انتخاب پوشه برای ذخیره..."
+          }
+        },
+        {
+          "Id": 1023,
+          "Content": {
+            "en-US": "Subtitle",
+            "fa-IR": "زیرنویس"
+          }
+        },
+        {
+          "Id": 1024,
+          "Placeholder": {
+            "en-US": "Choose Subtitle Language...",
+            "fa-IR": "انتخاب زبان زیرنویس..."
+          }
+        },
+        {
+          "Id": 1025,
+          "Content": {
+            "en-US": "Auto Download Subtitle After Opening it ",
+            "fa-IR": "دانلود خودکار زیرنویس بعد از انتخاب زیرنویس  "
+          }
+        },
+        {
+          "Id": 1026,
+          "Content": {
+            "en-US": "Show Notification when Download Finished",
+            "fa-IR": "نمایش اطلاعیه هنگام اتمام دانلود"
+          }
+        },
+        {
+          "Id": 1027,
+          "Placeholder": {
+            "en-US": "Choose Subtitle Server...",
+            "fa-IR": "انتخاب سرور زیرنویس..."
+          }
+        },
+        {
+          "Id": 1028,
+          "Content": {
+            "en-US": "General",
+            "fa-IR": "عمومی"
+          }
+        },
+        {
+          "Id": 1029,
+          "Content": {
+            "en-US": "Add Application to Files Context Menu",
+            "fa-IR": "افزودن برنامه به منوی کلیک راست فایل ها"
+          }
+        },
+        {
+          "Id": 1030,
+          "Content": {
+            "en-US": "Add Application to Directory Context Menu",
+            "fa-IR": "افزودن برنامه به منوی کلیک راست پوشه ها"
+          }
+        },
+        {
+          "Id": 1031,
+          "Content": {
+            "en-US": "Run In Background (window will be hiding instead of closing)",
+            "fa-IR": "اجرای برنامه در پس زمینه (برنامه به جای بستن مخفی خواهد شد و از سیستم ترای قابل دسترس خواهد بود)"
+          }
+        },
+        {
+          "Id": 1032,
+          "Placeholder": {
+            "en-US": "Search Subtitle...",
+            "fa-IR": "جستجوی زیرنویس..."
+          }
+        },
+        {
+          "Id": 1033,
+          "BusyContent": {
+            "en-US": "Loading Data...",
+            "fa-IR": "...درحال دریافت اطلاعات"
+          }
+        },
+        {
+          "Id": 1034,
+          "Text": {
+            "en-US": "New Version Found!",
+            "fa-IR": "نسخه جدید پیدا شد!"
+          }
+        },
+        {
+          "Id": 1035,
+          "Text": {
+            "en-US": "You are using Latest Version",
+            "fa-IR": "شما از آخرین نسخه استفاده میکنید"
+          }
+        },
+        {
+          "Id": 1036,
+          "Text": {
+            "en-US": "We cant find any version",
+            "fa-IR": "هیچ نسخه ای پیدا نشد"
+          }
+        },
+        {
+          "Id": 1037,
+          "Title": {
+            "en-US": "Subtitle Language {0}",
+            "fa-IR": "زبان زیرنویس {0}"
+          }
+        },
+        {
+          "Id": 1038,
+          "Title": {
+            "en-US": "Subtitle Server {0}",
+            "fa-IR": "سرور زیرنویس {0}"
+          }
+        },
+        {
+          "Id": 1039,
+          "Text": {
+            "en-US": "Version {0}",
+            "fa-IR": "نسخه {0}"
+          }
+        },
+        {
+          "Id": 1040,
+          "Text": {
+            "en-US": "Subtitle Not Found!",
+            "fa-IR": "زیرنویس موردنظر پیدا نشد"
+          }
+        },
+        {
+          "Id": 1041,
+          "Text": {
+            "en-US": "The server is not available",
+            "fa-IR": "سرور در دسترس نیست"
+          }
+        },
+        {
+          "Id": 1042,
+          "Content": {
+            "en-US": "Download Subtitle",
+            "fa-IR": "دانلود زیرنویس"
+          }
+        },
+        {
+          "Id": 1043,
+          "Content": {
+            "en-US": "Open Folder",
+            "fa-IR": "باز کردن پوشه"
+          }
+        },
+        {
+          "Id": 1044,
+          "Content": {
+            "en-US": "Downloading...",
+            "fa-IR": "...درحال دانلود"
+          }
+        },
+        {
+          "Id": 1045,
+          "Text": {
+            "en-US": "Cancel",
+            "fa-IR": "انصراف"
+          }
+        },
+        {
+          "Id": 1046,
+          "Text": {
+            "en-US": "{0} Downloaded",
+            "fa-IR": "{0} دانلود شد"
+          }
+        },
+        {
+          "Id": 1047,
+          "Text": {
+            "en-US": "You dont have Permission, Please Run app as Administrator or change application directory to another drive",
+            "fa-IR": "شما دسترسی لازم را ندارید لطفا برنامه را بصورت ادمین اجرا کنید یا پوشه برنامه را به محل دیگری (خارج از پوشه های سیستمی) منتقل کنید"
+          }
+        },
+        {
+          "Id": 1048,
+          "Text": {
+            "en-US": "Administrator Access Error",
+            "fa-IR": "خطای دسترسی"
+          }
+        }
+      ]
+    }
+  ]
+}

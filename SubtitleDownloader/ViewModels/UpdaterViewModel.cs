@@ -1,6 +1,7 @@
 ﻿using HandyControl.Controls;
 using Prism.Commands;
 using Prism.Mvvm;
+using Rasyidf.Localization;
 using System.Reflection;
 using System.Windows;
 
@@ -80,18 +81,18 @@ namespace SubtitleDownloader.ViewModels
                 if (ver.IsExistNewVersion)
                 {
                     IsUpdateExist = Visibility.Visible;
-                    Growl.Success("نسخه جدید پیدا شد!");
+                    Growl.Success(LocalizationService.GetString("1034", "Text", "نسخه جدید پیدا شد!"));
                 }
                 else
                 {
                     IsUpdateExist = Visibility.Collapsed;
-                    Growl.Info("شما از آخرین نسخه استفاده میکنید");
+                    Growl.Info(LocalizationService.GetString("1035", "Text", "شما از آخرین نسخه استفاده میکنید"));
                 }
             }
             catch (System.Exception)
             {
                 IsUpdateExist = Visibility.Collapsed;
-                Growl.Error("هیچ نسخه ای پیدا نشد");
+                Growl.Error(LocalizationService.GetString("1036", "Text", "هیچ نسخه ای پیدا نشد"));
             }
         }
     }

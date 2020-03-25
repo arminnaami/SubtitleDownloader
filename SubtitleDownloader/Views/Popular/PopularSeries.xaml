@@ -6,6 +6,7 @@
              xmlns:prism="http://prismlibrary.com/"      
              xmlns:local="clr-namespace:SubtitleDownloader.Views"
              xmlns:vm="clr-namespace:SubtitleDownloader.ViewModels"
+             xmlns:ul="http://rasyidf.github.io/Localisation"
              prism:ViewModelLocator.AutoWireViewModel="True">
 
     <hc:TransitioningContentControl>
@@ -14,8 +15,8 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <hc:SearchBar Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" IsRealTime="True" ShowClearButton="True" Style="{StaticResource SearchBarPlus}" Margin="10" hc:InfoElement.Placeholder="جستجوی زیرنویس..."/>
-            <hc:BusyIndicator IsBusy="{Binding IsBusy}" Grid.Row="1" Foreground="White" FlowDirection="LeftToRight" ProgressBarStyle="{StaticResource ProgressBarPrimaryStripe}" OverlayStyle="{StaticResource RectangleCircular}" BusyContent="...درحال دریافت اطلاعات">
+            <hc:SearchBar Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" IsRealTime="True" ShowClearButton="True" Style="{StaticResource SearchBarPlus}" Margin="10" hc:InfoElement.Placeholder="{ul:Tr جستجوی زیرنویس..., Uid=1032}"/>
+            <hc:BusyIndicator IsBusy="{Binding IsBusy}" Grid.Row="1" Foreground="White" FlowDirection="LeftToRight" ProgressBarStyle="{StaticResource ProgressBarPrimaryStripe}" OverlayStyle="{StaticResource RectangleCircular}" BusyContent="{ul:Tr ...درحال دریافت اطلاعات, Uid=1033}">
                 <ListBox FlowDirection="LeftToRight" Background="Transparent" ItemContainerStyle="{StaticResource ListBoxItemCustom}" BorderThickness="0" ItemsSource="{Binding ItemsView}" ItemsPanel="{StaticResource FluidMoveBehaviorWrapPanelItemsPanelTemplate}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
